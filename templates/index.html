@@ -7,7 +7,11 @@
 
     <body>
         <form action="greet" method="POST">
-            <p>What's your name?</p>
+            {% for message in get_flashed_messages() %}
+            <p>{{ message }}</p>
+            {% endfor %}
+
+{#            <p>What's your name?</p>#}
             <br>
             <input type="text" name="name_input">
             <br>
