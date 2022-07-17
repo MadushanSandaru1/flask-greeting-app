@@ -3,15 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <title>Say Hello</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     </head>
 
     <body>
+        <img src="{{ url_for('static', filename='img/logo.png') }}">
+        <br>
         <form action="greet" method="POST">
             {% for message in get_flashed_messages() %}
             <p>{{ message }}</p>
             {% endfor %}
 
-{#            <p>What's your name?</p>#}
             <br>
             <input type="text" name="name_input">
             <br>
